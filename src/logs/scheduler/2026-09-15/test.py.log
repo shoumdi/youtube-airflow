@@ -1,0 +1,18 @@
+[2026-09-15T13:48:32.159+0000] {processor.py:161} INFO - Started process (PID=49) to work on /opt/airflow/dags/test.py
+[2026-09-15T13:48:32.160+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2026-09-15T13:48:32.162+0000] {logging_mixin.py:188} INFO - [2026-09-15T13:48:32.161+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2026-09-15T13:48:32.181+0000] {processor.py:840} INFO - DAG(s) 'first_pipeline' retrieved from /opt/airflow/dags/test.py
+[2026-09-15T13:48:32.442+0000] {logging_mixin.py:188} INFO - [2026-09-15T13:48:32.441+0000] {override.py:1829} INFO - Created Permission View: can delete on DAG:first_pipeline
+[2026-09-15T13:48:32.454+0000] {logging_mixin.py:188} INFO - [2026-09-15T13:48:32.454+0000] {override.py:1829} INFO - Created Permission View: can edit on DAG:first_pipeline
+[2026-09-15T13:48:32.463+0000] {logging_mixin.py:188} INFO - [2026-09-15T13:48:32.462+0000] {override.py:1829} INFO - Created Permission View: can read on DAG:first_pipeline
+[2026-09-15T13:48:32.463+0000] {logging_mixin.py:188} INFO - [2026-09-15T13:48:32.463+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-15T13:48:32.475+0000] {logging_mixin.py:188} INFO - [2026-09-15T13:48:32.474+0000] {dag.py:3118} INFO - Creating ORM DAG for first_pipeline
+[2026-09-15T13:48:32.475+0000] {logging_mixin.py:188} INFO - [2026-09-15T13:48:32.475+0000] {dag.py:3954} INFO - Setting next_dagrun for first_pipeline to None, run_after=None
+[2026-09-15T13:48:32.495+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/test.py took 0.345 seconds
+[2026-09-15T13:49:02.628+0000] {processor.py:161} INFO - Started process (PID=56) to work on /opt/airflow/dags/test.py
+[2026-09-15T13:49:02.639+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2026-09-15T13:49:02.679+0000] {logging_mixin.py:188} INFO - [2026-09-15T13:49:02.670+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2026-09-15T13:49:02.729+0000] {processor.py:840} INFO - DAG(s) 'first_pipeline' retrieved from /opt/airflow/dags/test.py
+[2026-09-15T13:49:02.823+0000] {logging_mixin.py:188} INFO - [2026-09-15T13:49:02.823+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-15T13:49:02.839+0000] {logging_mixin.py:188} INFO - [2026-09-15T13:49:02.839+0000] {dag.py:3954} INFO - Setting next_dagrun for first_pipeline to None, run_after=None
+[2026-09-15T13:49:02.903+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/test.py took 0.333 seconds

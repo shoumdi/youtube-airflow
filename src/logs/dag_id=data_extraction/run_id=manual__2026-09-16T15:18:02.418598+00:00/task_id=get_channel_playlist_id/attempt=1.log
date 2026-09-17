@@ -1,0 +1,18 @@
+[2026-09-16T15:18:03.488+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-09-16T15:18:03.509+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_extraction.get_channel_playlist_id manual__2026-09-16T15:18:02.418598+00:00 [queued]>
+[2026-09-16T15:18:03.516+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_extraction.get_channel_playlist_id manual__2026-09-16T15:18:02.418598+00:00 [queued]>
+[2026-09-16T15:18:03.516+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-09-16T15:18:03.526+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): get_channel_playlist_id> on 2026-09-16 15:18:02.418598+00:00
+[2026-09-16T15:18:03.530+0000] {standard_task_runner.py:63} INFO - Started process 240 to run task
+[2026-09-16T15:18:03.535+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'data_extraction', 'get_channel_playlist_id', 'manual__2026-09-16T15:18:02.418598+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/data_extracter_dag.py', '--cfg-path', '/tmp/tmpa0uz9b_j']
+[2026-09-16T15:18:03.535+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask get_channel_playlist_id
+[2026-09-16T15:18:03.592+0000] {task_command.py:426} INFO - Running <TaskInstance: data_extraction.get_channel_playlist_id manual__2026-09-16T15:18:02.418598+00:00 [running]> on host 1a4c08f9ab32
+[2026-09-16T15:18:03.673+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='data_extraction' AIRFLOW_CTX_TASK_ID='get_channel_playlist_id' AIRFLOW_CTX_EXECUTION_DATE='2026-09-16T15:18:02.418598+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-16T15:18:02.418598+00:00'
+[2026-09-16T15:18:03.673+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-09-16T15:18:03.674+0000] {logging_mixin.py:188} INFO - AIzaSyAuV2w3rhgF7RI4irKOfLmpLXXyRTaQa-U this is my api key
+[2026-09-16T15:18:04.074+0000] {python.py:237} INFO - Done. Returned value was: UUKNTZMRHPLXfqlbdOI7mCkg
+[2026-09-16T15:18:04.075+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-09-16T15:18:04.109+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_extraction, task_id=get_channel_playlist_id, run_id=manual__2026-09-16T15:18:02.418598+00:00, execution_date=20260916T151802, start_date=20260916T151803, end_date=20260916T151804
+[2026-09-16T15:18:04.148+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-09-16T15:18:04.173+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-09-16T15:18:04.176+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

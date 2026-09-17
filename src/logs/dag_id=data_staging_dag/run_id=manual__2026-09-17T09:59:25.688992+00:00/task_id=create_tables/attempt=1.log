@@ -1,0 +1,32 @@
+[2026-09-17T09:59:26.746+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-09-17T09:59:26.766+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_staging_dag.create_tables manual__2026-09-17T09:59:25.688992+00:00 [queued]>
+[2026-09-17T09:59:26.772+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_staging_dag.create_tables manual__2026-09-17T09:59:25.688992+00:00 [queued]>
+[2026-09-17T09:59:26.773+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-09-17T09:59:26.788+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): create_tables> on 2026-09-17 09:59:25.688992+00:00
+[2026-09-17T09:59:26.793+0000] {standard_task_runner.py:63} INFO - Started process 2653 to run task
+[2026-09-17T09:59:26.797+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'data_staging_dag', 'create_tables', 'manual__2026-09-17T09:59:25.688992+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/data_staging_dag.py', '--cfg-path', '/tmp/tmp1a4rc6c2']
+[2026-09-17T09:59:26.798+0000] {standard_task_runner.py:91} INFO - Job 33: Subtask create_tables
+[2026-09-17T09:59:26.847+0000] {task_command.py:426} INFO - Running <TaskInstance: data_staging_dag.create_tables manual__2026-09-17T09:59:25.688992+00:00 [running]> on host 1a4c08f9ab32
+[2026-09-17T09:59:26.915+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='data_staging_dag' AIRFLOW_CTX_TASK_ID='create_tables' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T09:59:25.688992+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-17T09:59:25.688992+00:00'
+[2026-09-17T09:59:26.916+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-09-17T09:59:26.922+0000] {base.py:84} INFO - Using connection ID 'postgres_db_yt_elt' for task execution.
+[2026-09-17T09:59:26.928+0000] {sql.py:487} INFO - Running statement: 
+        CREATE SCHEMA IF NOT EXISTS staging;
+        CREATE TABLE IF NOT EXISTS staging.youtube_videos (
+            video_id       VARCHAR(50) PRIMARY KEY,
+            title          TEXT,
+            description    TEXT,
+            published_at   TIMESTAMPTZ,
+            duration       VARCHAR(50),
+            views          BIGINT,
+            likes          BIGINT,
+            comments       BIGINT,
+            loaded_at      TIMESTAMPTZ DEFAULT NOW()
+        );
+        , parameters: None
+[2026-09-17T09:59:26.929+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-09-17T09:59:26.930+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-09-17T09:59:26.939+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_staging_dag, task_id=create_tables, run_id=manual__2026-09-17T09:59:25.688992+00:00, execution_date=20260917T095925, start_date=20260917T095926, end_date=20260917T095926
+[2026-09-17T09:59:26.969+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-09-17T09:59:26.991+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-09-17T09:59:26.994+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

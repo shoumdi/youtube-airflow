@@ -1,0 +1,72 @@
+[2026-09-17T09:59:13.556+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-09-17T09:59:13.576+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_staging_dag.upsert scheduled__2026-09-16T00:00:00+00:00 [queued]>
+[2026-09-17T09:59:13.584+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_staging_dag.upsert scheduled__2026-09-16T00:00:00+00:00 [queued]>
+[2026-09-17T09:59:13.584+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-09-17T09:59:13.599+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): upsert> on 2026-09-16 00:00:00+00:00
+[2026-09-17T09:59:13.603+0000] {standard_task_runner.py:63} INFO - Started process 2644 to run task
+[2026-09-17T09:59:13.607+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'data_staging_dag', 'upsert', 'scheduled__2026-09-16T00:00:00+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/data_staging_dag.py', '--cfg-path', '/tmp/tmplamra2s9']
+[2026-09-17T09:59:13.608+0000] {standard_task_runner.py:91} INFO - Job 32: Subtask upsert
+[2026-09-17T09:59:13.660+0000] {task_command.py:426} INFO - Running <TaskInstance: data_staging_dag.upsert scheduled__2026-09-16T00:00:00+00:00 [running]> on host 1a4c08f9ab32
+[2026-09-17T09:59:13.798+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='data_staging_dag' AIRFLOW_CTX_TASK_ID='upsert' AIRFLOW_CTX_EXECUTION_DATE='2026-09-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-09-16T00:00:00+00:00'
+[2026-09-17T09:59:13.799+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-09-17T09:59:13.800+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-09-17T09:59:13.800+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_staging_dag.py", line 66, in upsert
+    hook = PostgresHook(postgres_conn_id=POSTGRES_CONN_ID)
+NameError: name 'POSTGRES_CONN_ID' is not defined
+[2026-09-17T09:59:13.811+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=data_staging_dag, task_id=upsert, run_id=scheduled__2026-09-16T00:00:00+00:00, execution_date=20260916T000000, start_date=20260917T095913, end_date=20260917T095913
+[2026-09-17T09:59:13.825+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 32 for task upsert (name 'POSTGRES_CONN_ID' is not defined; 2644)
+[2026-09-17T09:59:13.859+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-09-17T09:59:13.881+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-09-17T09:59:13.889+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-09-17T09:59:44.588+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-09-17T09:59:44.608+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_staging_dag.upsert scheduled__2026-09-16T00:00:00+00:00 [queued]>
+[2026-09-17T09:59:44.615+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_staging_dag.upsert scheduled__2026-09-16T00:00:00+00:00 [queued]>
+[2026-09-17T09:59:44.615+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-09-17T09:59:44.626+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): upsert> on 2026-09-16 00:00:00+00:00
+[2026-09-17T09:59:44.630+0000] {standard_task_runner.py:63} INFO - Started process 2663 to run task
+[2026-09-17T09:59:44.633+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'data_staging_dag', 'upsert', 'scheduled__2026-09-16T00:00:00+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/data_staging_dag.py', '--cfg-path', '/tmp/tmprrj49n5k']
+[2026-09-17T09:59:44.634+0000] {standard_task_runner.py:91} INFO - Job 38: Subtask upsert
+[2026-09-17T09:59:44.687+0000] {task_command.py:426} INFO - Running <TaskInstance: data_staging_dag.upsert scheduled__2026-09-16T00:00:00+00:00 [running]> on host 1a4c08f9ab32
+[2026-09-17T09:59:44.824+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='data_staging_dag' AIRFLOW_CTX_TASK_ID='upsert' AIRFLOW_CTX_EXECUTION_DATE='2026-09-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-09-16T00:00:00+00:00'
+[2026-09-17T09:59:44.825+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-09-17T09:59:44.825+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-09-17T09:59:44.826+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_staging_dag.py", line 66, in upsert
+    hook = PostgresHook(postgres_conn_id=POSTGRES_CONN_ID)
+NameError: name 'POSTGRES_CONN_ID' is not defined
+[2026-09-17T09:59:44.833+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=data_staging_dag, task_id=upsert, run_id=scheduled__2026-09-16T00:00:00+00:00, execution_date=20260916T000000, start_date=20260917T095944, end_date=20260917T095944
+[2026-09-17T09:59:44.843+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 38 for task upsert (name 'POSTGRES_CONN_ID' is not defined; 2663)
+[2026-09-17T09:59:44.885+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-09-17T09:59:44.909+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-09-17T09:59:44.919+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
