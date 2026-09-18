@@ -24,6 +24,4 @@ jobs:
           pip install pytest
 
       - name: run tests
-        run: | 
-          cd youtube-airflow/src
-          pytest
+        run: pytest
