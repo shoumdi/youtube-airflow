@@ -1,11 +1,11 @@
 from airflow.decorators import dag, task
 from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.models import Variable
-from datetime import datetime
 import json
 import requests
 from typing import Dict,Any
 from scripts.constants import BASE_URL
+from scripts.utils import export_json
 
 @dag(
     schedule=None,
@@ -119,9 +119,7 @@ def extraction_dag():
             
     @task
     def save_json(videos:list[Dict[str,Any]]):
-        filename = f"/opt/airflow/data/{datetime.now().strftime('%Y-%m-%d %H:%M')}.json"
-        with open(f"{filename}", "w") as file:
-            json.dump(videos, file, indent=4)
+        export_json(videos)
     
   
     api_key = Variable.get("API_KEY")

@@ -2,7 +2,7 @@ from airflow.decorators import dag, task
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 import json
 from pathlib import Path
-from scripts.utils import yt_duration_format
+from scripts.utils import yt_duration_format,import_latest_json
 from typing import Dict,Any
 from scripts.constants import CONN_ID,JSON_DIR
 
@@ -32,23 +32,7 @@ def loading():
         )
     @task
     def load_json_data()->list[Dict[str,Any]]:
-
-        directory = Path(JSON_DIR)
-
-        json_files = list(directory.glob("*.json"))
-
-        if not json_files:
-            raise FileNotFoundError(
-                f"No JSON files found in {JSON_DIR}"
-            )
-
-        latest_file = max(
-            json_files,
-            key=lambda file: file.stat().st_mtime
-        )
-        with latest_file.open("r", encoding="utf-8") as file:
-            data = json.load(file)
-        return data
+        return import_latest_json()
 
     @task
     def synchronize_staging(videos:list[Dict[str,Any]]):
