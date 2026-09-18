@@ -24,4 +24,4 @@ jobs:
           pip install pytest
 
       - name: run tests
-        run: pytest tests/
+        run: pytest youtube-airflow/tests/

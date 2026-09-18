@@ -2305,3 +2305,17 @@ NameError: name 'Dict' is not defined
 [2026-09-18T11:47:09.496+0000] {logging_mixin.py:188} INFO - [2026-09-18T11:47:09.496+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2026-09-18T11:47:09.533+0000] {logging_mixin.py:188} INFO - [2026-09-18T11:47:09.532+0000] {dag.py:3954} INFO - Setting next_dagrun for data_loading to None, run_after=None
 [2026-09-18T11:47:09.573+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/loading_dag.py took 0.156 seconds
+[2026-09-18T11:47:40.019+0000] {processor.py:161} INFO - Started process (PID=2390) to work on /opt/airflow/dags/loading_dag.py
+[2026-09-18T11:47:40.022+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/loading_dag.py for tasks to queue
+[2026-09-18T11:47:40.024+0000] {logging_mixin.py:188} INFO - [2026-09-18T11:47:40.023+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/loading_dag.py
+[2026-09-18T11:47:40.041+0000] {processor.py:840} INFO - DAG(s) 'data_loading' retrieved from /opt/airflow/dags/loading_dag.py
+[2026-09-18T11:47:40.079+0000] {logging_mixin.py:188} INFO - [2026-09-18T11:47:40.079+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-18T11:47:40.110+0000] {logging_mixin.py:188} INFO - [2026-09-18T11:47:40.110+0000] {dag.py:3954} INFO - Setting next_dagrun for data_loading to None, run_after=None
+[2026-09-18T11:47:40.140+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/loading_dag.py took 0.132 seconds
+[2026-09-18T11:48:10.521+0000] {processor.py:161} INFO - Started process (PID=2404) to work on /opt/airflow/dags/loading_dag.py
+[2026-09-18T11:48:10.527+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/loading_dag.py for tasks to queue
+[2026-09-18T11:48:10.528+0000] {logging_mixin.py:188} INFO - [2026-09-18T11:48:10.528+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/loading_dag.py
+[2026-09-18T11:48:10.548+0000] {processor.py:840} INFO - DAG(s) 'data_loading' retrieved from /opt/airflow/dags/loading_dag.py
+[2026-09-18T11:48:10.588+0000] {logging_mixin.py:188} INFO - [2026-09-18T11:48:10.587+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-18T11:48:10.622+0000] {logging_mixin.py:188} INFO - [2026-09-18T11:48:10.622+0000] {dag.py:3954} INFO - Setting next_dagrun for data_loading to None, run_after=None
+[2026-09-18T11:48:10.651+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/loading_dag.py took 0.142 seconds
