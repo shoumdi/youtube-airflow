@@ -24,6 +24,4 @@ jobs:
           pip install pytest
 
       - name: run tests
-        env:
-          PYTHONPATH: ${{ github.workspace }}/src
         run: pytest

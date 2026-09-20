@@ -1,4 +1,0 @@
--- CREATE USER youtube_airflow WITH PASSWORD 1234;
-CREATE DATABASE airflow;
-CREATE DATABASE youtube_elt;
-CREATE DATABASE celery;
