@@ -11,11 +11,12 @@ function create_user_and_database() {
     psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
         CREATE USER $username WITH PASSWORD '$password';
         CREATE DATABASE $database;
-        GRANT ALL PRIVILEGES ON DATABASE $database TO $username;
+        GRANT ALL PRIVILEGES ON DATABASE $database TO $username;    
 EOSQL
     psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$database" <<-EOSQL
-        GRANT ALL ON SCHEMA public TO $username;
+    GRANT ALL ON SCHEMA public TO $username;
 EOSQL
+
     echo "  User '$username' and database '$database' created successfully"
 }
 
